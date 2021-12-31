@@ -17,7 +17,7 @@ class NavDrawer extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 35,
-                fontWeight: FontWeight.w100,
+                fontWeight: FontWeight.w300,
                 shadows: [
                   Shadow(
                     color: Colors.black,
@@ -32,7 +32,7 @@ class NavDrawer extends StatelessWidget {
                 image: DecorationImage(
                     fit: BoxFit.fitHeight,
                     colorFilter: ColorFilter.mode(
-                        Colors.black.withOpacity(0.4), BlendMode.dstATop),
+                        Colors.black.withOpacity(0.5), BlendMode.dstATop),
                     image: const AssetImage('./assets/images/cover.jpg'))),
           ),
           ListTile(
