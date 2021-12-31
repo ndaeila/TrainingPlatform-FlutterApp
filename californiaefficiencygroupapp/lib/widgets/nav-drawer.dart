@@ -5,7 +5,6 @@ class NavDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.zero,
         children: <Widget>[
           ListTile(
             leading: const Icon(Icons.menu),
@@ -14,8 +13,19 @@ class NavDrawer extends StatelessWidget {
           ),
           DrawerHeader(
             child: const Text(
-              'Menu',
-              style: TextStyle(color: Colors.white, fontSize: 25),
+              'California\nEfficiency\nGroup',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 35,
+                fontWeight: FontWeight.w100,
+                shadows: [
+                  Shadow(
+                    color: Colors.black,
+                    blurRadius: 10,
+                  ),
+                ],
+              ),
+              textAlign: TextAlign.left,
             ),
             decoration: BoxDecoration(
                 color: Colors.green,
@@ -23,7 +33,7 @@ class NavDrawer extends StatelessWidget {
                     fit: BoxFit.fitHeight,
                     colorFilter: ColorFilter.mode(
                         Colors.black.withOpacity(0.5), BlendMode.dstATop),
-                    image: const AssetImage('images/cover.jpg'))),
+                    image: const AssetImage('./assets/images/cover.jpg'))),
           ),
           ListTile(
             leading: const Icon(Icons.input),
