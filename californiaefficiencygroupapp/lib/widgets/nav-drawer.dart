@@ -28,11 +28,11 @@ class NavDrawer extends StatelessWidget {
               textAlign: TextAlign.left,
             ),
             decoration: BoxDecoration(
-                color: Colors.green,
+                color: Colors.blue,
                 image: DecorationImage(
                     fit: BoxFit.fitHeight,
                     colorFilter: ColorFilter.mode(
-                        Colors.black.withOpacity(0.5), BlendMode.dstATop),
+                        Colors.black.withOpacity(0.4), BlendMode.dstATop),
                     image: const AssetImage('./assets/images/cover.jpg'))),
           ),
           ListTile(
