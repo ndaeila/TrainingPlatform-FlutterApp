@@ -73,18 +73,27 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
-    const bodyTextElement = ReadTextFile('./assets/text/DummyText.txt');
+    const bodyTextElement =
+        ReadTextFile(textURL: './assets/text/DummyText.txt');
+    const titleMargin = 10;
+
     return Scaffold(
       endDrawer: NavDrawer(),
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: SizedBox(
-          height: kToolbarHeight,
-          child: Image.asset('./assets/images/CEG-title.png'),
+          height: kToolbarHeight - titleMargin,
+          child: Row(
+            children: [
+              Image.asset('./assets/images/CEG-icon.png'),
+              const Text("  "),
+              Image.asset('./assets/images/CEG-title.png'),
+            ],
+          ),
         ),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
@@ -224,7 +233,3 @@ Color shadeColor(Color color, double factor) => Color.fromRGBO(
     shadeValue(color.green, factor),
     shadeValue(color.blue, factor),
     1);
-
-Future<String> getFileData(String path) async {
-  return await rootBundle.loadString(path);
-}
