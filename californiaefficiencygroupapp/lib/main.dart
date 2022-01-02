@@ -1,6 +1,5 @@
 // Import other stuff
 import 'dart:math';
-import 'package:flutter/services.dart' show rootBundle;
 
 // Import widgets
 import 'package:flutter/material.dart';
@@ -79,19 +78,30 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       endDrawer: NavDrawer(),
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: SizedBox(
-          height: kToolbarHeight - titleMargin,
-          child: Row(
-            children: [
-              Image.asset('./assets/images/CEG-icon.png'),
-              const Text("  "),
-              Image.asset('./assets/images/CEG-title.png'),
-            ],
+      appBar: PreferredSize(
+        child: Container(
+          decoration: const BoxDecoration(boxShadow: [
+            BoxShadow(
+              color: Colors.white,
+              offset: Offset(0, 2.0),
+              blurRadius: 8.0,
+            )
+          ]),
+          child: AppBar(
+            elevation: 0.0,
+            title: SizedBox(
+              height: kToolbarHeight - titleMargin,
+              child: Row(
+                children: [
+                  Image.asset('./assets/images/CEG-icon.png'),
+                  const Text("  "),
+                  Image.asset('./assets/images/CEG-title.png'),
+                ],
+              ),
+            ),
           ),
         ),
+        preferredSize: const Size.fromHeight(kToolbarHeight),
       ),
       body: SingleChildScrollView(
         // Center is a layout widget. It takes a single child and positions it
