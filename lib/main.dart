@@ -2,9 +2,11 @@
 import 'dart:math';
 
 // Import widgets
+import 'package:californiaefficiencygroup/ui/app.dart';
 import 'package:flutter/material.dart';
-import 'widgets/nav-drawer.dart';
-import 'widgets/get-text.dart';
+import 'package:provider/provider.dart';
+import 'ui/widgets/nav-drawer.dart';
+import 'ui/widgets/get-text.dart';
 
 // Terminal Comnmands:
 //  check available devices: flutter devices
@@ -14,7 +16,13 @@ import 'widgets/get-text.dart';
 //   verbose: -v
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    MultiProvider(
+      providers: [],
+      child: App(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
