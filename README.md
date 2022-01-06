@@ -1,6 +1,6 @@
 # CaliforniaEfficiencyGroupAPP
 
-This project is a training web app for California Efficiency Group.
+Training web/mobile app for California Efficiency Group.
 
 # Setup
 ## Flutter
@@ -21,6 +21,30 @@ Windows: https://flutter.dev/docs/get-started/install/windows
 - Flutter
 - Dart
 - Bracket Pair Colorizer
+
+## Mac Specific
+
+1. Install [Homebrew](https://brew.sh/)
+1. Install Ruby version manager which can handle .ruby-version e.g. [rbenv](https://github.com/rbenv/rbenv)
+1. Install Ruby by Ruby version manager
+1. Install Bundler `gem install bundler`
+1. `bundle install --path vendor/bundle`
+1. `cd ios`, `bundle exec fastlane match development`
+    - Passphrase: (insert passphrase)
+    - If you encountered an error, `bundle exec fastlane match nuke development` may resolve it.
+1. `flutter pub run build_runner build`
+1. `flutter build ios --no-codesign --simulator`
+    - If you want to run the app on a device, run `flutter build ios --no-codesign`
+1. `open ios/Runner.xcworkspace` and run the app
+    - Alternatively, `open -a Simulator` and `flutter run`
+
+# Deployment/Release
+## Android
+1. Run `flutter build apk --release` in the project console to build an apk file.
+1. Upload the apk to google play, or Firebase app distribution depending on the need.
+
+## iOS
+https://www.google.com
 
 ## Getting Started
 
