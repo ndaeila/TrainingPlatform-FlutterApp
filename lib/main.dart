@@ -47,9 +47,12 @@ class MyApp extends StatelessWidget {
             print("Error: " + snapshot.error.toString());
             return const Text("Something went wrong!");
           } else if (snapshot.hasData) {
-            const MyHomePage(title: 'California Efficiency Group');
+            return const MyHomePage(title: 'California Efficiency Group');
           } else {
             // Show Splash Screen
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
           }
         },
       ),
