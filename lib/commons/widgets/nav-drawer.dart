@@ -33,7 +33,7 @@ class NavDrawer extends StatelessWidget {
                   fit: BoxFit.fitHeight,
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.5), BlendMode.dstATop),
-                  image: const AssetImage('./assets/images/nav-cover.jpg'),
+                  image: const AssetImage('./images/nav-cover.jpg'),
                 )),
           ),
           ListTile(

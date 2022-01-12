@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'commons/widgets/nav-drawer.dart';
 import 'commons/widgets/get-text.dart';
+import 'firebase_options.dart';
 
 // Terminal Comnmands:
 //  check available devices: flutter devices
@@ -21,16 +22,17 @@ import 'commons/widgets/get-text.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
-    MultiProvider(
-      providers: [],
-      child: App(),
-    ),
+    // MultiProvider(
+    //   providers: const [],
+
+    // ),
+    MyApp(),
   );
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
-  final Future<FirebaseApp> _fbApp = Firebase.initializeApp();
+  final Future<FirebaseApp> _fbApp =
+      Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   // This widget is the root of your application.
   @override
@@ -72,8 +74,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    const bodyTextElement =
-        ReadTextFile(textURL: './assets/text/DummyText.txt');
+    const bodyTextElement = ReadTextFile(textURL: './text/description.txt');
+
+
     const titleMargin = 10;
 
     return Scaffold(
@@ -93,9 +96,9 @@ class _MyHomePageState extends State<MyHomePage> {
               height: kToolbarHeight - titleMargin,
               child: Row(
                 children: [
-                  Image.asset('./assets/images/CEG-icon.png'),
+                  Image.asset('./images/CEG-icon.png'),
                   const Text("  "),
-                  Image.asset('./assets/images/CEG-title.png'),
+                  Image.asset('./images/CEG-title.png'),
                 ],
               ),
             ),
@@ -133,13 +136,16 @@ class _MyLoginPageState extends State<MyLoginPage> {
         // the App.build method, and use it to set our appbar title.
         title: SizedBox(
           height: kToolbarHeight,
-          child: Image.asset('./assets/images/CEG-title.png'),
+          child: Image.asset('./images/CEG-title.png'),
         ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           // body children go here
+          children: const [
+            Text("What goes here?"),
+          ],
         ),
       ),
     );
