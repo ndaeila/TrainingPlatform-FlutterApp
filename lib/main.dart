@@ -5,12 +5,15 @@ import 'dart:math';
 import 'package:firebase_core/firebase_core.dart';
 
 // Import necessary material
-import 'package:californiaefficiencygroup/ui/app.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:logging/logging.dart';
+import 'package:flutter/foundation.dart';
+
 import 'commons/widgets/nav-drawer.dart';
 import 'commons/widgets/get-text.dart';
 import 'firebase_options.dart';
+import 'package:californiaefficiencygroup/ui/app.dart';
 
 // Terminal Comnmands:
 //  check available devices: flutter devices
@@ -34,7 +37,6 @@ class MyApp extends StatelessWidget {
   final Future<FirebaseApp> _fbApp =
       Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -150,6 +152,13 @@ class _MyLoginPageState extends State<MyLoginPage> {
       ),
     );
   }
+}
+
+void _initializeLogging() {
+  Logger.root.level = kReleaseMode ? Level.OFF : Level.ALL;
+  Logger.root.onRecord.listen((rec) {
+    print('${rec.level.name}: ${rec.time}: ${rec.message}');
+  });
 }
 
 MaterialColor generateMaterialColor(Color color) {
