@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
-import 'package:provider/provider.dart';
 
 import 'package:californiaefficiencygroup/ui/splash/splash_controller.dart';
 
@@ -20,6 +19,10 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child: Text("CEG Logo"),
+      ),
+    );
   }
 }

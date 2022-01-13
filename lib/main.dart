@@ -1,19 +1,19 @@
-// Import other stuff
 import 'dart:math';
 
-// Import firebase
-import 'package:firebase_core/firebase_core.dart';
+import 'package:californiaefficiencygroup/ui/app.dart';
+import 'package:californiaefficiencygroup/ui/home/home_page.dart';
+import 'package:californiaefficiencygroup/commons/widgets/nav-drawer.dart';
+import 'package:californiaefficiencygroup/firebase_options.dart';
+import 'package:californiaefficiencygroup/ui/splash/splash_controller.dart';
+import 'package:californiaefficiencygroup/ui/splash/splash_state.dart';
 
 // Import necessary material
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:logging/logging.dart';
 import 'package:flutter/foundation.dart';
-
-import 'commons/widgets/nav-drawer.dart';
-import 'commons/widgets/get-text.dart';
-import 'firebase_options.dart';
-import 'package:californiaefficiencygroup/ui/app.dart';
 
 // Terminal Comnmands:
 //  check available devices: flutter devices
@@ -25,133 +25,14 @@ import 'package:californiaefficiencygroup/ui/app.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
-    // MultiProvider(
-    //   providers: const [],
-
-    // ),
-    MyApp(),
+    MultiProvider(
+      providers: [
+        StateNotifierProvider<SplashController, SplashState>(create: (context) => SplashController(context),),
+      ],
+      child: App(),
+    ),
+    
   );
-}
-
-class MyApp extends StatelessWidget {
-  final Future<FirebaseApp> _fbApp =
-      Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'California Efficiency Group',
-      theme: ThemeData(
-        primarySwatch: generateMaterialColor(Colors.white),
-      ),
-      home: FutureBuilder(
-        future: _fbApp,
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            print("Error: " + snapshot.error.toString());
-            return const Text("Something went wrong!");
-          } else if (snapshot.hasData) {
-            return const MyHomePage(title: 'California Efficiency Group');
-          } else {
-            // Show Splash Screen
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
-      ),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    const bodyTextElement = ReadTextFile(textURL: './text/description.txt');
-
-
-    const titleMargin = 10;
-
-    return Scaffold(
-      endDrawer: NavDrawer(),
-      appBar: PreferredSize(
-        child: Container(
-          decoration: const BoxDecoration(boxShadow: [
-            BoxShadow(
-              color: Colors.white,
-              offset: Offset(0, 2.0),
-              blurRadius: 8.0,
-            )
-          ]),
-          child: AppBar(
-            elevation: 0.0,
-            title: SizedBox(
-              height: kToolbarHeight - titleMargin,
-              child: Row(
-                children: [
-                  Image.asset('./images/CEG-icon.png'),
-                  const Text("  "),
-                  Image.asset('./images/CEG-title.png'),
-                ],
-              ),
-            ),
-          ),
-        ),
-        preferredSize: const Size.fromHeight(kToolbarHeight),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            bodyTextElement,
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class MyLoginPage extends StatefulWidget {
-  const MyLoginPage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyLoginPage> createState() => _MyLoginPageState();
-}
-
-class _MyLoginPageState extends State<MyLoginPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: NavDrawer(),
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: SizedBox(
-          height: kToolbarHeight,
-          child: Image.asset('./images/CEG-title.png'),
-        ),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          // body children go here
-          children: const [
-            Text("What goes here?"),
-          ],
-        ),
-      ),
-    );
-  }
 }
 
 void _initializeLogging() {
