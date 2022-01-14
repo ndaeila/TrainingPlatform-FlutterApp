@@ -23,6 +23,7 @@ import 'package:flutter/foundation.dart';
 //   chrome: flutter run -d chrome --debug --web-hostname localhost --web-port 8080
 //   ios: flutter run
 //   verbose: -v
+//  Compile for freezed things: flutter pub run build_runner watch --delete-conflicting-outputs
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,12 +31,15 @@ Future<void> main() async {
   runApp(
     MultiProvider(
       providers: [
-        StateNotifierProvider<SplashController, SplashState>(create: (context) => SplashController(context),),
-        StateNotifierProvider<HomeController, HomeState>(create: (_) => HomeController(),)
+        StateNotifierProvider<SplashController, SplashState>(
+          create: (context) => SplashController(context),
+        ),
+        StateNotifierProvider<HomeController, HomeState>(
+          create: (_) => HomeController(),
+        )
       ],
       child: App(),
     ),
-    
   );
 }
 
