@@ -1,4 +1,5 @@
 import 'package:californiaefficiencygroup/firebase_options.dart';
+import 'package:californiaefficiencygroup/ui/home/home_page.dart';
 import 'package:californiaefficiencygroup/ui/splash/splash_dart.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -13,9 +14,10 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'insert title',
       debugShowCheckedModeBanner: !kReleaseMode,
-      initialRoute: SplashPage.routeName,
+      initialRoute: '/home', // SplashPage.routeName,
       routes: {
         SplashPage.routeName: SplashPage.wrapped,
+        '/home': (_) => HomePage()
       },
       theme: ThemeData(
         primaryColor: Colors.white,

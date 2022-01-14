@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 
+import 'package:californiaefficiencygroup/ui/splash/splash_state.dart';
 import 'package:californiaefficiencygroup/ui/splash/splash_controller.dart';
-
-import 'splash_state.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage._({Key? key}) : super(key: key);
@@ -21,7 +20,12 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("CEG Logo"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Insert CEG Logo"),
+          ],
+        ),
       ),
     );
   }

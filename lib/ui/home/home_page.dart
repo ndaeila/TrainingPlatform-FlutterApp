@@ -1,20 +1,13 @@
+import 'dart:io';
+
 import 'package:californiaefficiencygroup/commons/widgets/get-text.dart';
 import 'package:californiaefficiencygroup/commons/widgets/nav-drawer.dart';
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    const bodyTextElement = ReadTextFile(textURL: './text/description.txt');
+    const bodyTextElement = ReadTextFile(textURL: 'assets/text/description.txt');
 
     const titleMargin = 10;
 
@@ -31,16 +24,20 @@ class _MyHomePageState extends State<MyHomePage> {
           ]),
           child: AppBar(
             elevation: 0.0,
-            title: SizedBox(
-              height: kToolbarHeight - titleMargin,
-              child: Row(
-                children: [
-                  Image.asset('./images/CEG-icon.png'),
-                  const Text("  "),
-                  Image.asset('./images/CEG-title.png'),
-                ],
-              ),
-            ),
+            title: Platform.isAndroid || Platform.isIOS
+                ? Text("TODO: Implement")
+                : SizedBox(
+                    height: kToolbarHeight - titleMargin,
+                    child: Flexible(
+                      child: Row(
+                        children: [
+                          Image.asset('./images/CEG-icon.png'),
+                          const Text("  "),
+                          Image.asset('./images/CEG-title.png'),
+                        ],
+                      ),
+                    ),
+                  ),
           ),
         ),
         preferredSize: const Size.fromHeight(kToolbarHeight),

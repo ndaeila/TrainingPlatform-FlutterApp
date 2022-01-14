@@ -1,9 +1,11 @@
 import 'dart:math';
 
 import 'package:californiaefficiencygroup/ui/app.dart';
+import 'package:californiaefficiencygroup/ui/home/home_controller.dart';
 import 'package:californiaefficiencygroup/ui/home/home_page.dart';
 import 'package:californiaefficiencygroup/commons/widgets/nav-drawer.dart';
 import 'package:californiaefficiencygroup/firebase_options.dart';
+import 'package:californiaefficiencygroup/ui/home/home_state.dart';
 import 'package:californiaefficiencygroup/ui/splash/splash_controller.dart';
 import 'package:californiaefficiencygroup/ui/splash/splash_state.dart';
 
@@ -28,6 +30,7 @@ Future<void> main() async {
     MultiProvider(
       providers: [
         StateNotifierProvider<SplashController, SplashState>(create: (context) => SplashController(context),),
+        StateNotifierProvider<HomeController, HomeState>(create: (_) => HomeController(),)
       ],
       child: App(),
     ),
