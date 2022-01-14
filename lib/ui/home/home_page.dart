@@ -1,14 +1,16 @@
 import 'dart:io';
 
+import 'package:californiaefficiencygroup/ui/home/home_state.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:californiaefficiencygroup/commons/widgets/get-text.dart';
 import 'package:californiaefficiencygroup/commons/widgets/nav-drawer.dart';
-import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    const bodyTextElement = ReadTextFile(textURL: 'assets/text/description.txt');
-
+    final state = context.watch<HomeState>();
     const titleMargin = 10;
 
     return Scaffold(
@@ -45,8 +47,8 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            bodyTextElement,
+          children: [
+            Text(state.bodyTextElement),
           ],
         ),
       ),
