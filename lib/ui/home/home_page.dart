@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:californiaefficiencygroup/ui/home/home_state.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -26,9 +27,8 @@ class HomePage extends StatelessWidget {
           ]),
           child: AppBar(
             elevation: 0.0,
-            title: Platform.isAndroid || Platform.isIOS
-                ? Text("TODO: Implement")
-                : SizedBox(
+            title: kIsWeb
+                ? SizedBox(
                     height: kToolbarHeight - titleMargin,
                     child: Flexible(
                       child: Row(
@@ -39,7 +39,10 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                  ),
+                  )
+                : Platform.isAndroid || Platform.isIOS
+                    ? Text("TODO: Implement android text")
+                    : Text("IOS Text"),
           ),
         ),
         preferredSize: const Size.fromHeight(kToolbarHeight),
