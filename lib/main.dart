@@ -53,7 +53,8 @@ class MyApp extends StatelessWidget {
           } else {
             // Show Splash Screen
             return const Center(
-              child: CircularProgressIndicator(),
+              child: Text("Why"),
+              //CircularProgressIndicator()
             );
           }
         },
@@ -75,7 +76,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     const bodyTextElement = ReadTextFile(textURL: './text/description.txt');
-
 
     const titleMargin = 10;
 
