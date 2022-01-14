@@ -26,6 +26,7 @@ import 'package:flutter/foundation.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  _initializeLogging();
   runApp(
     MultiProvider(
       providers: [

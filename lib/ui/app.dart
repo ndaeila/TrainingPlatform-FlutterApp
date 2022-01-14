@@ -14,10 +14,10 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'insert title',
       debugShowCheckedModeBanner: !kReleaseMode,
-      initialRoute: '/home', // SplashPage.routeName,
+      initialRoute: SplashPage.routeName,
       routes: {
         SplashPage.routeName: SplashPage.wrapped,
-        '/home': (_) => HomePage()
+        '/home': (_) => HomePage(),
       },
       theme: ThemeData(
         primaryColor: Colors.white,
