@@ -27,7 +27,7 @@ import 'package:flutter/foundation.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  initializeLogging();
+  _initializeLogging();
   runApp(
     MultiProvider(
       providers: [
@@ -35,7 +35,7 @@ Future<void> main() async {
           create: (context) => SplashController(context),
         ),
         StateNotifierProvider<HomeController, HomeState>(
-          create: () => HomeController(),
+          create: (_) => HomeController(),
         )
       ],
       child: App(),
