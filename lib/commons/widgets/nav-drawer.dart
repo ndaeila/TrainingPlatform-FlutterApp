@@ -1,6 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class NavDrawer extends StatelessWidget {
+  AssetImage navCoverImage = const AssetImage('./images/nav-cover.jpg');
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -33,7 +36,7 @@ class NavDrawer extends StatelessWidget {
                   fit: BoxFit.fitHeight,
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.5), BlendMode.dstATop),
-                  image: const AssetImage('./images/nav-cover.jpg'),
+                  image: navCoverImage,
                 )),
           ),
           ListTile(
