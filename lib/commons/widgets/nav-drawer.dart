@@ -35,7 +35,7 @@ class NavDrawer extends StatelessWidget {
                 image: DecorationImage(
                   fit: BoxFit.fitHeight,
                   colorFilter: ColorFilter.mode(
-                      Colors.black.withOpacity(0.5), BlendMode.dstATop),
+                      Colors.white.withOpacity(0.5), BlendMode.dstATop),
                   image: navCoverImage,
                 )),
           ),

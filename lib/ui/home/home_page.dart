@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:californiaefficiencygroup/ui/home/home_state.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -26,6 +26,7 @@ class HomePage extends StatelessWidget {
             )
           ]),
           child: AppBar(
+            backgroundColor: Colors.white,
             elevation: 0.0,
             title: kIsWeb
                 ? SizedBox(
