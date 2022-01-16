@@ -19,12 +19,17 @@ class SplashController extends StateNotifier<SplashState> with LocatorMixin {
   Future<void> temporaryWork() async {
     print('controllerを動かすために読んでいます');
   }
-
+  
+  // TODO: Implement
   Future<void> initializeLogin() async {
-    bool isLoggedIn = true;
+    bool isLoggedIn = 0 == 1;
     if (isLoggedIn) {
       WidgetsBinding.instance!.addPostFrameCallback((timeStamp) async {
         await Navigator.of(context).pushReplacementNamed('/home');
+      });
+    } else {
+      WidgetsBinding.instance!.addPostFrameCallback((timeStamp) async {
+        await Navigator.of(context).pushReplacementNamed('/login');
       });
     }
   }
