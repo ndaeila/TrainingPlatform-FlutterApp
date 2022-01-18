@@ -24,7 +24,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = context.watch<LoginStateController>();
     final screenSize = MediaQuery.of(context).size;
-    final isMobile = !kIsWeb;
+    const isMobile = !kIsWeb;
 
     return Scaffold(
       body: Stack(
@@ -157,6 +157,12 @@ class LoginPage extends StatelessWidget {
                                 onPressed: context.select<LoginState, bool>((state) => state.isLoginButtonDisabled) ? null : () {
                                   // TODO: Implement
                                   print('Sign-In button was clicked.');
+                                  context.read<LoginStateController>().login(
+                                    context,
+                                    controller.usernameEditController.text,
+                                    controller.emailEditController.text,
+                                    controller.passwordEditController.text,
+                                  );
                                 },
                                 child: const Text('Sign-In'),
                               ),

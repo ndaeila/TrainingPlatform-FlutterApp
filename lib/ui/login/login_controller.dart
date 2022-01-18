@@ -27,8 +27,17 @@ class LoginStateController extends StateNotifier<LoginState> with LocatorMixin {
     state = const LoginState();
   }
 
-  void login() {
-    // TODO: Implement
+  void login(
+    BuildContext context,
+    String username,
+    String email,
+    String password,
+  ) async {
+    state = state.copyWith(isLoginButtonDisabled: true);
+    // TODO: Implement request
+    print('Logging in...\n{\n\tUser: $username\n\tEmail: $email | Password: $password\n}');
+    state = state.copyWith(isLoginButtonDisabled: false);
+    return ;
   }
 
   Future<void> navigateToSignUp(BuildContext context) async {
