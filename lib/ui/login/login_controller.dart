@@ -16,6 +16,10 @@ class LoginStateController extends StateNotifier<LoginState> with LocatorMixin {
     );
   }
 
+  final usernameEditController = TextEditingController();
+  final emailEditController = TextEditingController();
+  final passwordEditController = TextEditingController();
+
   @override
   Future<void> initState() async {
     super.initState();
@@ -25,5 +29,9 @@ class LoginStateController extends StateNotifier<LoginState> with LocatorMixin {
 
   void login() {
     // TODO: Implement
+  }
+
+  Future<void> navigateToSignUp(BuildContext context) async {
+    Navigator.of(context).pushReplacementNamed('/login/signup');
   }
 }

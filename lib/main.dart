@@ -8,6 +8,8 @@ import 'package:californiaefficiencygroup/firebase_options.dart';
 import 'package:californiaefficiencygroup/ui/home/home_state.dart';
 import 'package:californiaefficiencygroup/ui/login/login_controller.dart';
 import 'package:californiaefficiencygroup/ui/login/login_state.dart';
+import 'package:californiaefficiencygroup/ui/login/signup/signup_controller.dart';
+import 'package:californiaefficiencygroup/ui/login/signup/signup_state.dart';
 import 'package:californiaefficiencygroup/ui/splash/splash_controller.dart';
 import 'package:californiaefficiencygroup/ui/splash/splash_state.dart';
 
@@ -38,6 +40,9 @@ Future<void> main() async {
         ),
         StateNotifierProvider<LoginStateController, LoginState>(
           create: (_) => LoginStateController(),
+        ),
+        StateNotifierProvider<SignupController, SignupState>(
+          create: (_) => SignupController(),
         ),
         StateNotifierProvider<HomeController, HomeState>(
           create: (_) => HomeController(),

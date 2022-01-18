@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:californiaefficiencygroup/ui/login/login_controller.dart';
+import 'package:californiaefficiencygroup/ui/login/login_state.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -77,6 +78,7 @@ class LoginPage extends StatelessWidget {
 
                               // Textfield #1, username
                               TextFormField(
+                                controller: controller.usernameEditController,
                                 decoration: InputDecoration(
                                   prefixIcon: Icon(
                                     Icons.account_circle,
@@ -94,6 +96,7 @@ class LoginPage extends StatelessWidget {
 
                               // Textfield #2, email
                               TextFormField(
+                                controller: controller.emailEditController,
                                 decoration: InputDecoration(
                                   prefixIcon: Icon(
                                     Icons.email,
@@ -111,6 +114,7 @@ class LoginPage extends StatelessWidget {
 
                               // Textfield #3, password
                               TextFormField(
+                                controller: controller.passwordEditController,
                                 decoration: InputDecoration(
                                   prefixIcon: Icon(
                                     Icons.lock,
@@ -133,12 +137,15 @@ class LoginPage extends StatelessWidget {
                                   TextButton(
                                     onPressed: () {
                                       // TODO: Implement
+                                      print('Forgot password button was clicked');
                                     },
                                     child: const Text('Forgot password?'),
                                   ),
                                   TextButton(
                                     onPressed: () {
                                       // TODO: Implement
+                                      print('Create account button was clicked');
+                                      context.read<LoginStateController>().navigateToSignUp(context);
                                     },
                                     child: const Text('Create a new Account'),
                                   ),
@@ -147,8 +154,9 @@ class LoginPage extends StatelessWidget {
 
                               // Sign in
                               TextButton(
-                                onPressed: 3==3? null : () {
+                                onPressed: context.select<LoginState, bool>((state) => state.isLoginButtonDisabled) ? null : () {
                                   // TODO: Implement
+                                  print('Sign-In button was clicked.');
                                 },
                                 child: const Text('Sign-In'),
                               ),
