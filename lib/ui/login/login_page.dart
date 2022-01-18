@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:californiaefficiencygroup/ui/login/login_controller.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,15 +22,150 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = context.watch<LoginStateController>();
+    final screenSize = MediaQuery.of(context).size;
+    final isMobile = !kIsWeb;
 
     return Scaffold(
-      body: Container( // TODO: Implement AsertImage
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/nav-cover.jpg'),
-            fit: BoxFit.cover,
+      body: Stack(
+        children: [
+          Container(
+            width: screenSize.width, // TODO: Replace
+            height: screenSize.height, // TODO: Replace
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/nav-cover.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
-        ),
+          Center(
+            child: Column(
+              children: [
+                const Expanded(
+                  child: SizedBox(),
+                ),
+                Expanded(
+                  flex: 7,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: isMobile
+                              ? screenSize.width * 0.9
+                              : screenSize.width * 0.7,
+                        ),
+                        child: Form(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 50,
+                                  vertical: 50,
+                                ),
+                                child: const Text(
+                                  'SIGN IN',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+
+                              // Textfield #1, username
+                              TextFormField(
+                                decoration: InputDecoration(
+                                  prefixIcon: Icon(
+                                    Icons.account_circle,
+                                    color: Colors.white.withOpacity(.8),
+                                  ),
+                                  border: InputBorder.none,
+                                  hintMaxLines: 1,
+                                  hintText: 'User name',
+                                  hintStyle: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.white.withOpacity(.5),
+                                  ),
+                                ),
+                              ),
+
+                              // Textfield #2, email
+                              TextFormField(
+                                decoration: InputDecoration(
+                                  prefixIcon: Icon(
+                                    Icons.email,
+                                    color: Colors.white.withOpacity(.8),
+                                  ),
+                                  border: InputBorder.none,
+                                  hintMaxLines: 1,
+                                  hintText: 'Email',
+                                  hintStyle: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.white.withOpacity(.5),
+                                  ),
+                                ),
+                              ),
+
+                              // Textfield #3, password
+                              TextFormField(
+                                decoration: InputDecoration(
+                                  prefixIcon: Icon(
+                                    Icons.lock,
+                                    color: Colors.white.withOpacity(.8),
+                                  ),
+                                  border: InputBorder.none,
+                                  hintMaxLines: 1,
+                                  hintText: 'Password',
+                                  hintStyle: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.white.withOpacity(.5),
+                                  ),
+                                ),
+                              ),
+
+                              // Forgot password | Create a new account
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  TextButton(
+                                    onPressed: () {
+                                      // TODO: Implement
+                                    },
+                                    child: const Text('Forgot password?'),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      // TODO: Implement
+                                    },
+                                    child: const Text('Create a new Account'),
+                                  ),
+                                ],
+                              ),
+
+                              // Sign in
+                              TextButton(
+                                onPressed: 3==3? null : () {
+                                  // TODO: Implement
+                                },
+                                child: const Text('Sign-In'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const Expanded(
+                  child: SizedBox(),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
