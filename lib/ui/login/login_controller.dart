@@ -19,6 +19,7 @@ class LoginStateController extends StateNotifier<LoginState> with LocatorMixin {
   final usernameEditController = TextEditingController();
   final emailEditController = TextEditingController();
   final passwordEditController = TextEditingController();
+  FocusNode usernameNode = FocusNode(), emailNode = FocusNode(), passwordNode =FocusNode();
 
   @override
   Future<void> initState() async {

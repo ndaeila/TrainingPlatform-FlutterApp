@@ -92,6 +92,8 @@ class LoginPage extends StatelessWidget {
                                     color: Colors.white.withOpacity(.5),
                                   ),
                                 ),
+                                focusNode: controller.usernameNode,
+                                onFieldSubmitted: (value) => FocusScope.of(context).requestFocus(controller.emailNode),
                               ),
 
                               // Textfield #2, email
@@ -110,6 +112,8 @@ class LoginPage extends StatelessWidget {
                                     color: Colors.white.withOpacity(.5),
                                   ),
                                 ),
+                                focusNode: controller.emailNode,
+                                onFieldSubmitted: (value) => FocusScope.of(context).requestFocus(controller.passwordNode),
                               ),
 
                               // Textfield #3, password
@@ -128,6 +132,7 @@ class LoginPage extends StatelessWidget {
                                     color: Colors.white.withOpacity(.5),
                                   ),
                                 ),
+                                focusNode: controller.passwordNode,
                               ),
 
                               // Forgot password | Create a new account
