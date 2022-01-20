@@ -12,11 +12,15 @@ import 'package:californiaefficiencygroup/ui/splash/splash_state.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:californiaefficiencygroup/firebase_options.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:logging/logging.dart';
 import 'package:flutter/foundation.dart';
+
+// Random ID generating package for folder/file names
+import 'package:randexp/randexp.dart';
 
 // Terminal Comnmands:
 //  check available devices: flutter devices
@@ -35,7 +39,7 @@ Future<void> main() async {
   );
 
   testDatabaseWorking();
-
+  createRandomIDs();
   runApp(
     MultiProvider(
       providers: [
@@ -59,8 +63,23 @@ void _initializeLogging() {
 }
 
 // Just as an example, when app loaded, a random test var in realtime database is changed
-void testDatabaseWorking() {
+Future<void> testDatabaseWorking() async {
   DatabaseReference _testing =
-      FirebaseDatabase.instance.ref("Tutorials").child("TestTutorial");
-  _testing.set("Something${Random().nextInt(10)}");
+      FirebaseDatabase.instance.ref("Tutorials/Tutorial1/Q1/Question");
+  DatabaseEvent event = await _testing.once();
+  print(event.snapshot.value);
+  _testing.set("What is 9 + 10?");
+}
+
+// Continue this
+// https://firebase.flutter.dev/docs/storage/usage
+void testStorageWorking() {
+  firebase_storage.FirebaseStorage storage =
+      firebase_storage.FirebaseStorage.instance;
+}
+
+// Random ID Generator for file system
+void createRandomIDs() {
+  String randomID = RandExp(RegExp(r'^[\w^_]{20}$')).gen();
+  print("Random ID: ${randomID}");
 }
