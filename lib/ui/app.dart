@@ -1,5 +1,7 @@
 import 'package:californiaefficiencygroup/firebase_options.dart';
 import 'package:californiaefficiencygroup/ui/home/home_page.dart';
+import 'package:californiaefficiencygroup/ui/login/login_page.dart';
+import 'package:californiaefficiencygroup/ui/login/signup/signup_page.dart';
 import 'package:californiaefficiencygroup/ui/splash/splash_dart.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -16,6 +18,8 @@ class App extends StatelessWidget {
       routes: {
         SplashPage.routeName: SplashPage.wrapped,
         '/home': (_) => HomePage(),
+        LoginPage.routeName: LoginPage.wrapped,
+        SignupPage.routeName: SignupPage.wrapped,
       },
       theme: ThemeData(
         primaryColor: Colors.white,
