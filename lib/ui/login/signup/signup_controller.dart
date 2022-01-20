@@ -14,4 +14,24 @@ class SignupController extends StateNotifier<SignupState> with LocatorMixin {
       create: (context) => SignupController(),
     );
   }
+
+  final usernameEditController = TextEditingController();
+  final emailEditController = TextEditingController();
+  final passwordEditController = TextEditingController();
+  FocusNode usernameNode = FocusNode(),
+      emailNode = FocusNode(),
+      passwordNode = FocusNode();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  Future<void> signup(
+    BuildContext,
+    String username,
+    String email,
+    String password,
+  ) async {}
 }
