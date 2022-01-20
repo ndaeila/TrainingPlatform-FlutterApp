@@ -5,6 +5,10 @@ import 'package:californiaefficiencygroup/ui/home/home_controller.dart';
 import 'package:californiaefficiencygroup/ui/home/home_page.dart';
 import 'package:californiaefficiencygroup/commons/widgets/nav-drawer.dart';
 import 'package:californiaefficiencygroup/ui/home/home_state.dart';
+import 'package:californiaefficiencygroup/ui/login/login_controller.dart';
+import 'package:californiaefficiencygroup/ui/login/login_state.dart';
+import 'package:californiaefficiencygroup/ui/login/signup/signup_controller.dart';
+import 'package:californiaefficiencygroup/ui/login/signup/signup_state.dart';
 import 'package:californiaefficiencygroup/ui/splash/splash_controller.dart';
 import 'package:californiaefficiencygroup/ui/splash/splash_state.dart';
 
@@ -45,6 +49,12 @@ Future<void> main() async {
       providers: [
         StateNotifierProvider<SplashController, SplashState>(
           create: (context) => SplashController(context),
+        ),
+        StateNotifierProvider<LoginStateController, LoginState>(
+          create: (_) => LoginStateController(),
+        ),
+        StateNotifierProvider<SignupController, SignupState>(
+          create: (_) => SignupController(),
         ),
         StateNotifierProvider<HomeController, HomeState>(
           create: (_) => HomeController(),
