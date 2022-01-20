@@ -49,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '407334007063',
     projectId: 'ceg-api',
     authDomain: 'ceg-api.firebaseapp.com',
+    databaseURL: 'https://ceg-api-default-rtdb.firebaseio.com/',
     storageBucket: 'ceg-api.appspot.com',
     measurementId: 'G-W3Y87M606V',
   );

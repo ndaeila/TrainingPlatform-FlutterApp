@@ -31,14 +31,12 @@ class HomePage extends StatelessWidget {
             title: kIsWeb
                 ? SizedBox(
                     height: kToolbarHeight - titleMargin,
-                    child: Flexible(
-                      child: Row(
-                        children: [
-                          Image.asset('./images/CEG-icon.png'),
-                          const Text("  "),
-                          Image.asset('./images/CEG-title.png'),
-                        ],
-                      ),
+                    child: Row(
+                      children: [
+                        Image.asset('./images/CEG-icon.png'),
+                        const Text("  "),
+                        Image.asset('./images/CEG-title.png'),
+                      ],
                     ),
                   )
                 : Platform.isAndroid || Platform.isIOS

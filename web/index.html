@@ -100,5 +100,40 @@
       loadMainDartJs();
     }
   </script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-auth.js';
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-analytics.js";
+    import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js'
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configurationz
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCYb24cZCEV6QmVxEbPw9cxII0-xugiADA",
+      authDomain: "ceg-api.firebaseapp.com",
+      projectId: "ceg-api",
+      databaseURL: 'https://ceg-api-default-rtdb.firebaseio.com/',
+      storageBucket: "ceg-api.appspot.com",
+      messagingSenderId: "407334007063",
+      appId: "1:407334007063:web:117de180f9155447e50752",
+      measurementId: "G-W3Y87M606V"
+    };
+    // Initialize:
+    // Firebase
+    const app = initializeApp(firebaseConfig);
+    // Firebase Analytics
+    const analytics = getAnalytics(app);
+    // Firebase Auth
+    const auth = getAuth(app);
+    // Firebase Database
+    const database = getDatabase(app);
+
+    if (app && analytics) {
+      console.log("Firebase works");
+    }
+  </script>
 </body>
 </html>

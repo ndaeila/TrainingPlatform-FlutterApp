@@ -31,6 +31,8 @@ dependencies:
   firebase_analytics: ^9.0.4
   firebase_messaging: ^11.2.4
   firebase_remote_config: ^1.0.3
+  firebase_database: ^9.0.5
+
 
   # Notifications
   flutter_local_notifications: ^9.2.0

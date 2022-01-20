@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
-  // final Future<FirebaseApp> _fbApp =
-  //     Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
