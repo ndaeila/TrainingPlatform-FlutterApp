@@ -1,13 +1,11 @@
 import 'dart:io';
 
+import 'package:californiaefficiencygroup/ui/common/nav-drawer.dart';
 import 'package:californiaefficiencygroup/ui/home/home_controller.dart';
 import 'package:californiaefficiencygroup/ui/home/home_state.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'package:californiaefficiencygroup/commons/widgets/get-text.dart';
-import 'package:californiaefficiencygroup/commons/widgets/nav-drawer.dart';
 
 class HomePage extends StatelessWidget {
   @override

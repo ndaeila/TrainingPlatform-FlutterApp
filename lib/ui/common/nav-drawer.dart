@@ -49,6 +49,11 @@ class NavDrawer extends StatelessWidget {
             onTap: () => {},
           ),
           ListTile(
+            leading: const Icon(Icons.quiz),
+            title: const Text('Tutorial'),
+            onTap: () => {Navigator.of(context).popAndPushNamed('/tutorial')},
+          ),
+          ListTile(
             leading: const Icon(Icons.info),
             title: const Text('About Us'),
             onTap: () => {Navigator.of(context).pop()},
