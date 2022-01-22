@@ -5,6 +5,8 @@ import 'package:state_notifier/state_notifier.dart';
 class HomeController extends StateNotifier<HomeState> with LocatorMixin {
   HomeController() : super(const HomeState());
 
+  void setDrawerIsOpen(bool b) => state = state.copyWith(drawerIsOpen: b);
+
   @override
   Future<void> initState() async {
     super.initState();

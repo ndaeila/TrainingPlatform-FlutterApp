@@ -6,5 +6,6 @@ part 'home_state.freezed.dart';
 abstract class HomeState with _$HomeState {
   const factory HomeState({
     @Default("") String bodyTextElement,
+    @Default(false) bool drawerIsOpen,
   }) = _HomeState;
 }

@@ -13,7 +13,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'insert title',
-      debugShowCheckedModeBanner: !kReleaseMode,
+      debugShowCheckedModeBanner: false,
       initialRoute: SplashPage.routeName,
       routes: {
         SplashPage.routeName: SplashPage.wrapped,

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:californiaefficiencygroup/ui/home/home_controller.dart';
 import 'package:californiaefficiencygroup/ui/home/home_state.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
@@ -15,17 +16,38 @@ class HomePage extends StatelessWidget {
     const titleMargin = 10;
 
     return Scaffold(
-      endDrawer: NavDrawer(),
+      drawer: NavDrawer(),
+      onDrawerChanged: (isOpened) {
+        context.read<HomeController>().setDrawerIsOpen(isOpened);
+      },
       appBar: PreferredSize(
         child: Container(
-          decoration: const BoxDecoration(boxShadow: [
-            BoxShadow(
-              color: Colors.white,
-              offset: Offset(0, 2.0),
-              blurRadius: 8.0,
-            )
-          ]),
+          decoration: const BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.white,
+                offset: Offset(0, 2.0),
+                blurRadius: 8.0,
+              )
+            ],
+          ),
           child: AppBar(
+            actions: [
+              StatefulBuilder(
+                builder: (context, setState) {
+                  return MaterialButton(
+                    child: Icon(
+                      Icons.menu_rounded,
+                      color: state.drawerIsOpen ? Colors.transparent : Colors.black,
+                      size: 40,
+                    ),
+                    onPressed: () => Scaffold.of(context).openDrawer(),
+                    // splashColor: Colors.transparent,
+                  );
+                },
+              )
+            ],
+            leadingWidth: 0,
             backgroundColor: Colors.white,
             elevation: 0.0,
             title: kIsWeb
