@@ -22,7 +22,7 @@ class SplashController extends StateNotifier<SplashState> with LocatorMixin {
   
   // TODO: Implement
   Future<void> initializeLogin() async {
-    bool isLoggedIn = 0 == 1;
+    bool isLoggedIn = 1 == 1;
     if (isLoggedIn) {
       WidgetsBinding.instance!.addPostFrameCallback((timeStamp) async {
         await Navigator.of(context).pushReplacementNamed('/home');

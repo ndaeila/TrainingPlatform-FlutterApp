@@ -1,16 +1,20 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class NavDrawer extends StatelessWidget {
   AssetImage navCoverImage = const AssetImage('./images/nav-cover.jpg');
+
+  NavDrawer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
         children: <Widget>[
           ListTile(
-            leading: const Icon(Icons.menu),
+            leading: const Icon(
+              Icons.close,
+              color: Colors.black,
+            ),
             title: const Text('Close Menu'),
             onTap: () => {Navigator.pop(context)},
           ),
@@ -45,18 +49,18 @@ class NavDrawer extends StatelessWidget {
             onTap: () => {},
           ),
           ListTile(
-            leading: Icon(Icons.info),
-            title: Text('About Us'),
+            leading: const Icon(Icons.info),
+            title: const Text('About Us'),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
-            leading: Icon(Icons.border_color),
-            title: Text('Create Your Account'),
+            leading: const Icon(Icons.border_color),
+            title: const Text('Create Your Account'),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
-            leading: Icon(Icons.login),
-            title: Text('Login'),
+            leading: const Icon(Icons.login),
+            title: const Text('Login'),
             onTap: () => {Navigator.of(context).pop()},
           ),
         ],
