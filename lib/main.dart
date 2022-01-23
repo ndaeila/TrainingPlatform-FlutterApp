@@ -2,8 +2,6 @@ import 'dart:math';
 
 import 'package:californiaefficiencygroup/ui/app.dart';
 import 'package:californiaefficiencygroup/ui/home/home_controller.dart';
-import 'package:californiaefficiencygroup/ui/home/home_page.dart';
-import 'package:californiaefficiencygroup/commons/widgets/nav-drawer.dart';
 import 'package:californiaefficiencygroup/ui/home/home_state.dart';
 import 'package:californiaefficiencygroup/ui/login/login_controller.dart';
 import 'package:californiaefficiencygroup/ui/login/login_state.dart';
@@ -11,6 +9,8 @@ import 'package:californiaefficiencygroup/ui/login/signup/signup_controller.dart
 import 'package:californiaefficiencygroup/ui/login/signup/signup_state.dart';
 import 'package:californiaefficiencygroup/ui/splash/splash_controller.dart';
 import 'package:californiaefficiencygroup/ui/splash/splash_state.dart';
+import 'package:californiaefficiencygroup/ui/tutorial/tutorial_controller.dart';
+import 'package:californiaefficiencygroup/ui/tutorial/tutorial_state.dart';
 
 // Import necessary material
 import 'package:firebase_core/firebase_core.dart';
@@ -58,6 +58,9 @@ Future<void> main() async {
         ),
         StateNotifierProvider<HomeController, HomeState>(
           create: (_) => HomeController(),
+        ),
+        StateNotifierProvider<TutorialController, TutorialState>(
+          create: (_) => TutorialController(),
         )
       ],
       child: App(),
