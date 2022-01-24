@@ -54,4 +54,11 @@ class TutorialController extends StateNotifier<TutorialState>
     );
     super.initState();
   }
+
+  @override
+  void dispose() {
+    videoPlayerController.dispose();
+    chewieController!.dispose();
+    super.dispose();
+  }
 }
