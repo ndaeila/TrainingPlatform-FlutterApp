@@ -13,19 +13,22 @@ class QuestionCard extends StatelessWidget {
       child: Column(
         children: [
           // Question
-          Container(
-            height: 30,
-            child: Center(
-              child: Text(
-                question.question,
-                textAlign: TextAlign.center,
+          ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 30),
+            child: Container(
+              padding: const EdgeInsets.all(5),
+              child: Center(
+                child: Text(
+                  question.question,
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
-            decoration: BoxDecoration(
-              color: Colors.cyan[200],
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(10),
-                topRight: Radius.circular(10),
+              decoration: BoxDecoration(
+                color: Colors.cyan[200],
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
               ),
             ),
           ),

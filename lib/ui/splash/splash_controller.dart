@@ -25,7 +25,7 @@ class SplashController extends StateNotifier<SplashState> with LocatorMixin {
     bool isLoggedIn = 1 == 1;
     if (isLoggedIn) {
       WidgetsBinding.instance!.addPostFrameCallback((timeStamp) async {
-        await Navigator.of(context).pushReplacementNamed('/home');
+        await Navigator.of(context).pushReplacementNamed('/tutorial');
       });
     } else {
       WidgetsBinding.instance!.addPostFrameCallback((timeStamp) async {
