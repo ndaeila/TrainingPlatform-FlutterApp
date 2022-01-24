@@ -24,6 +24,7 @@ class TutorialPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.watch<TutorialState>();
     final screenSize = MediaQuery.of(context).size;
+    final controller = context.read<TutorialController>();
 
     return Scaffold(
       drawer: NavDrawer(),
@@ -92,10 +93,13 @@ class TutorialPage extends StatelessWidget {
                   maxHeight: screenSize.height * 0.8,
                   maxWidth: screenSize.width * 0.7,
                 ),
-                child: Chewie(
-                  controller:
-                      context.watch<TutorialController>().chewieController!,
-                ),
+                child:
+                    context.watch<TutorialController>().chewieController == null
+                        ? Container()
+                        : Chewie(
+                            controller: controller
+                                .chewieController!,
+                          ),
               ),
             ),
 
@@ -154,81 +158,120 @@ class TutorialPage extends StatelessWidget {
               ),
             ),
 
-            Column(
-              children: [
-                Container(
-                  child: Text(
-                    'Record yourself saying the pitch 3 times',
-                    textAlign: TextAlign.center,
-                  ),
-                ),
+            SizedBox(
+              height: 20,
+            ),
 
-                // Record
-                MaterialButton(
-                  color: Colors.blue[100],
-                  onPressed: () {
-                    //
-                  },
-                  child: Row(
-                    children: [
-                      Text('1.'),
-                      Container(
-                        child: Row(
-                          // Microphone icon
-                          children: [
-                            Icon(Icons.mic),
-                            Text('Press the microphone to record'),
-                          ],
-                        ),
-                      ),
-                    ],
+            Container(
+              color: Colors.white,
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Container(
+                    child: Text(
+                      'Record yourself saying the pitch 3 times',
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
 
-                // Audio
-                MaterialButton(
-                  color: Colors.blue[100],
-                  onPressed: () {
-                    //
-                  },
-                  child: Row(
-                    children: [
-                      Text('2.'),
-                      Container(
-                        child: Row(
-                          // Microphone icon
-                          children: [
-                            Icon(Icons.mic),
-                            Text('/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\'),
-                          ],
-                        ),
-                      ),
-                    ],
+                  const SizedBox(
+                    height: 10,
                   ),
-                ),
 
-                // Record
-                MaterialButton(
-                  color: Colors.blue[100],
-                  onPressed: () {
-                    //
-                  },
-                  child: Row(
-                    children: [
-                      Text('3.'),
-                      Container(
-                        child: Row(
-                          // Microphone icon
-                          children: [
-                            Icon(Icons.mic),
-                            Text('Press the microphone to record'),
-                          ],
+                  // Record
+                  MaterialButton(
+                    color: Colors.blue[100],
+                    onPressed: () {
+                      //
+                    },
+                    child: Row(
+                      children: [
+                        const Text('1.'),
+                        Container(
+                          child: Row(
+                            // Microphone icon
+                            children: [
+                              Icon(Icons.mic),
+                              Text('Press the microphone to record'),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+
+                  const SizedBox(
+                    height: 10,
+                  ),
+
+                  // Audio
+                  MaterialButton(
+                    color: Colors.blue[100],
+                    onPressed: () {
+                      //
+                    },
+                    child: Row(
+                      children: [
+                        Text('2.'),
+                        Container(
+                          child: Row(
+                            // Microphone icon
+                            children: [
+                              Icon(Icons.mic),
+                              Text(
+                                '/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\',
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(
+                    height: 10,
+                  ),
+
+                  // Record
+                  MaterialButton(
+                    color: Colors.blue[100],
+                    onPressed: () {
+                      //
+                    },
+                    child: Row(
+                      children: [
+                        Text('3.'),
+                        Container(
+                          child: Row(
+                            // Microphone icon
+                            children: [
+                              Icon(Icons.mic),
+                              Text('Press the microphone to record'),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(
+                    height: 10,
+                  ),
+
+                  // Submit button
+                  RaisedButton(
+                    onPressed: () {
+                      // TODO: Implement
+                    },
+                    child: Container(
+                      child: Text(
+                        'Submit',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
 
             // Navigators
@@ -250,6 +293,10 @@ class TutorialPage extends StatelessWidget {
                   },
                 ),
               ],
+            ),
+
+            const SizedBox(
+              height: 30,
             ),
           ],
         ),

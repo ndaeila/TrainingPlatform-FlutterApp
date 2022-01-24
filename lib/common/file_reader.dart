@@ -22,7 +22,7 @@ class FileReader {
       return file.readAsString();
     } catch (e) {
       print(e.toString());
-      return "Something went wrong while reading $fileName";
+      return "Error occurred while reading $fileName";
     }
   }
 }

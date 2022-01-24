@@ -8,6 +8,7 @@ import 'package:video_player/video_player.dart';
 class TutorialController extends StateNotifier<TutorialState>
     with LocatorMixin {
   TutorialController() : super(const TutorialState());
+  
   VideoPlayerController videoPlayerController =
       VideoPlayerController.network('assets/videos/CEGVideo.mp4');
   ChewieController? chewieController;

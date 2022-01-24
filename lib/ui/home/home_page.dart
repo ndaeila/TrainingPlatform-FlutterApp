@@ -13,6 +13,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.watch<HomeState>();
     const titleMargin = 10;
+    final controller = context.read<HomeController>();
 
     return Scaffold(
       drawer: NavDrawer(),
@@ -72,8 +73,8 @@ class HomePage extends StatelessWidget {
       body: Stack(
         children: [
           Expanded(
-            child: Chewie(
-              controller: context.watch<HomeController>().chewieController!,
+            child: context.watch<HomeController>().chewieController == null ? Container() : Chewie(
+              controller: controller.chewieController!,
             ),
           ),
           SingleChildScrollView(
