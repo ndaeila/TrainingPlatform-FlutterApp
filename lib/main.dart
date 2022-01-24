@@ -37,13 +37,14 @@ import 'package:randexp/randexp.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   _initializeLogging();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
-  testDatabaseWorking();
-  createRandomIDs();
+    testDatabaseWorking();
+    createRandomIDs();
+  }
   runApp(
     MultiProvider(
       providers: [

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NavDrawer extends StatelessWidget {
-  AssetImage navCoverImage = const AssetImage('./images/nav-cover.jpg');
+  AssetImage navCoverImage = const AssetImage('assets/images/nav-cover.jpg');
 
   NavDrawer({Key? key}) : super(key: key);
 

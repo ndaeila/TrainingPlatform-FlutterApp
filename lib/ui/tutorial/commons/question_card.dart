@@ -43,6 +43,7 @@ class QuestionCard extends StatelessWidget {
               ),
             ),
             child: ListView.separated(
+              physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) => Container(
                 // height: 20,
                 child: MaterialButton(

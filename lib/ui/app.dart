@@ -20,7 +20,7 @@ class App extends StatelessWidget {
         TutorialPage.routeName: TutorialPage.wrapped
       },
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.grey[350],
+        scaffoldBackgroundColor: Colors.grey[200],
       ),
     );
   }
