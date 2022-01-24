@@ -6,12 +6,14 @@ import 'package:californiaefficiencygroup/ui/home/home_state.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:chewie/chewie.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final state = context.watch<HomeState>();
     const titleMargin = 10;
+    final controller = context.read<HomeController>();
 
     return Scaffold(
       drawer: NavDrawer(),
@@ -36,7 +38,9 @@ class HomePage extends StatelessWidget {
                   return MaterialButton(
                     child: Icon(
                       Icons.menu_rounded,
-                      color: state.drawerIsOpen ? Colors.transparent : Colors.black,
+                      color: state.drawerIsOpen
+                          ? Colors.transparent
+                          : Colors.black,
                       size: 40,
                     ),
                     onPressed: () => Scaffold.of(context).openDrawer(),
@@ -66,13 +70,22 @@ class HomePage extends StatelessWidget {
         ),
         preferredSize: const Size.fromHeight(kToolbarHeight),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(state.bodyTextElement),
-          ],
-        ),
+      body: Stack(
+        children: [
+          Expanded(
+            child: context.watch<HomeController>().chewieController == null ? Container() : Chewie(
+              controller: controller.chewieController!,
+            ),
+          ),
+          SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(state.bodyTextElement),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

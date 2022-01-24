@@ -1,16 +1,34 @@
 import 'package:californiaefficiencygroup/ui/tutorial/commons/question.dart';
+import 'package:chewie/chewie.dart';
 import 'package:state_notifier/state_notifier.dart';
 
 import 'package:californiaefficiencygroup/ui/tutorial/tutorial_state.dart';
+import 'package:video_player/video_player.dart';
 
 class TutorialController extends StateNotifier<TutorialState>
     with LocatorMixin {
   TutorialController() : super(const TutorialState());
+  
+  VideoPlayerController videoPlayerController =
+      VideoPlayerController.network('assets/videos/CEGVideo.mp4');
+  ChewieController? chewieController;
 
   void setDrawerIsOpen(bool b) => state = state.copyWith(drawerIsOpen: b);
 
   @override
-  void initState() {
+  Future<void> initState() async {
+    print('initializing chewie controller');
+    await videoPlayerController.initialize();
+    chewieController = ChewieController(
+      videoPlayerController: videoPlayerController,
+      autoPlay: false,
+      looping: false,
+      autoInitialize: true,
+      showControls: true,
+      allowFullScreen: false, // Do not change
+      allowMuting: false, // This too!
+    );
+    print('INITIALIZED chewie controller');
     state = state.copyWith(
       questions: <String, Map>{
         "Q1": <String, dynamic>{
