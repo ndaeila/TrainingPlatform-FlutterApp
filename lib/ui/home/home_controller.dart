@@ -9,7 +9,7 @@ class HomeController extends StateNotifier<HomeState> with LocatorMixin {
   HomeController() : super(const HomeState());
 
   VideoPlayerController videoPlayerController =
-      VideoPlayerController.network('assets/videos/CEGVideo.mp4');
+      VideoPlayerController.asset('assets/videos/CEGVideo.mp4');
   ChewieController? chewieController;
 
   void setDrawerIsOpen(bool b) => state = state.copyWith(drawerIsOpen: b);

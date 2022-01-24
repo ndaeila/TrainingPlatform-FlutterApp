@@ -61,13 +61,19 @@ class TutorialPage extends StatelessWidget {
             // Tutorial 1
             // "8 Great Work Habits"
             Padding(
-              padding:
-                  EdgeInsets.symmetric(horizontal: screenSize.width * 0.15),
+              padding: EdgeInsets.symmetric(
+                horizontal: screenSize.width * 0.15,
+                vertical: 20,
+              ),
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 20),
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  color: Colors.blue,
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(20)),
+                  border: Border.all(
+                    width: 5.0,
+                    color: Colors.white,
+                  ),
+                  color: Colors.blue[50],
                 ),
                 child: const Center(
                   child: Text(
@@ -76,10 +82,6 @@ class TutorialPage extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-
-            const SizedBox(
-              height: 25,
             ),
 
             // [Video Player]
@@ -97,8 +99,7 @@ class TutorialPage extends StatelessWidget {
                     context.watch<TutorialController>().chewieController == null
                         ? Container()
                         : Chewie(
-                            controller: controller
-                                .chewieController!,
+                            controller: controller.chewieController!,
                           ),
               ),
             ),
@@ -113,7 +114,7 @@ class TutorialPage extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(
-                    height: 30,
+                    height: 40,
                     child: Center(
                       child: Text('Multiple Choice'),
                     ),
@@ -158,7 +159,7 @@ class TutorialPage extends StatelessWidget {
               ),
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
 
