@@ -82,7 +82,9 @@ class TutorialPage extends StatelessWidget {
             ),
 
             // [Video Player]
-            Container(
+            Material(
+              elevation: 10,
+              color: Colors.grey[300],
               child: ConstrainedBox(
                 constraints: BoxConstraints(
                   minHeight: 300,
@@ -95,6 +97,10 @@ class TutorialPage extends StatelessWidget {
                       context.watch<TutorialController>().chewieController!,
                 ),
               ),
+            ),
+
+            const SizedBox(
+              height: 20,
             ),
 
             // <Multiple Choice>
@@ -146,6 +152,38 @@ class TutorialPage extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+
+            Column(
+              children: [
+                Container(
+                  child: Text(
+                    'Record yourself saying the pitch 3 times',
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+
+                // Record
+                Row(
+                  children: [
+                    Text('1.'),
+                  ],
+                ),
+
+                // Audio
+                Row(
+                  children: [
+                    Text('1.'),
+                  ],
+                ),
+
+                // Record
+                Row(
+                  children: [
+                    Text('1.'),
+                  ],
+                ),
+              ],
             ),
 
             // Navigators

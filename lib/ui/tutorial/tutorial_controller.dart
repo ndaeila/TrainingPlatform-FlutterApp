@@ -24,6 +24,8 @@ class TutorialController extends StateNotifier<TutorialState>
       looping: false,
       autoInitialize: true,
       showControls: true,
+      allowFullScreen: false, // Do not change
+      allowMuting: false, // This too!
     );
     print('INITIALIZED chewie controller');
     state = state.copyWith(
