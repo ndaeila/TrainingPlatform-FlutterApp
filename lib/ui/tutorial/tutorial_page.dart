@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:californiaefficiencygroup/ui/common/nav-drawer.dart';
 import 'package:californiaefficiencygroup/ui/tutorial/commons/question.dart';
 import 'package:californiaefficiencygroup/ui/tutorial/commons/question_card.dart';
 import 'package:californiaefficiencygroup/ui/tutorial/tutorial_controller.dart';
 import 'package:californiaefficiencygroup/ui/tutorial/tutorial_state.dart';
 import 'package:chewie/chewie.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
@@ -33,10 +36,20 @@ class TutorialPage extends StatelessWidget {
       },
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
-          'App Bar',
-          style: TextStyle(color: Colors.black),
-        ),
+        title: kIsWeb
+            ? SizedBox(
+                height: kToolbarHeight - 10,
+                child: Row(
+                  children: [
+                    Image.asset('./images/CEG-icon.png'),
+                    const Text("  "),
+                    Image.asset('./images/CEG-title.png'),
+                  ],
+                ),
+              )
+            : Platform.isAndroid || Platform.isIOS
+                ? Text("TODO: Implement android text")
+                : Text("IOS Text"),
         actions: [
           StatefulBuilder(
             builder: (context, setState) {
@@ -58,6 +71,9 @@ class TutorialPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const SizedBox(
+              height: 20,
+            ),
             // Tutorial 1
             // "8 Great Work Habits"
             Padding(
@@ -67,7 +83,7 @@ class TutorialPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 20),
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
-                  color: Colors.blue,
+                  color: Colors.lightBlue,
                 ),
                 child: const Center(
                   child: Text(
@@ -88,17 +104,16 @@ class TutorialPage extends StatelessWidget {
               color: Colors.grey[300],
               child: ConstrainedBox(
                 constraints: BoxConstraints(
-                  minHeight: 300,
-                  minWidth: 300,
-                  maxHeight: screenSize.height * 0.8,
-                  maxWidth: screenSize.width * 0.7,
-                ),
+                    // minHeight: 300,
+                    // minWidth: 300,
+                    // maxHeight: screenSize.height * 0.8,
+                    // maxWidth: screenSize.width * 0.7,
+                    ),
                 child:
                     context.watch<TutorialController>().chewieController == null
                         ? Container()
                         : Chewie(
-                            controller: controller
-                                .chewieController!,
+                            controller: controller.chewieController!,
                           ),
               ),
             ),
@@ -219,7 +234,7 @@ class TutorialPage extends StatelessWidget {
                             children: [
                               Icon(Icons.mic),
                               Text(
-                                '/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\',
+                                '/\\/\\/\\/\\/\\/\\Audio Waves/\\/\\/\\/\\/\\/\\',
                               ),
                             ],
                           ),
