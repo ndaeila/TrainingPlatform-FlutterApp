@@ -164,24 +164,69 @@ class TutorialPage extends StatelessWidget {
                 ),
 
                 // Record
-                Row(
-                  children: [
-                    Text('1.'),
-                  ],
+                MaterialButton(
+                  color: Colors.blue[100],
+                  onPressed: () {
+                    //
+                  },
+                  child: Row(
+                    children: [
+                      Text('1.'),
+                      Container(
+                        child: Row(
+                          // Microphone icon
+                          children: [
+                            Icon(Icons.mic),
+                            Text('Press the microphone to record'),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
 
                 // Audio
-                Row(
-                  children: [
-                    Text('1.'),
-                  ],
+                MaterialButton(
+                  color: Colors.blue[100],
+                  onPressed: () {
+                    //
+                  },
+                  child: Row(
+                    children: [
+                      Text('2.'),
+                      Container(
+                        child: Row(
+                          // Microphone icon
+                          children: [
+                            Icon(Icons.mic),
+                            Text('/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\'),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
 
                 // Record
-                Row(
-                  children: [
-                    Text('1.'),
-                  ],
+                MaterialButton(
+                  color: Colors.blue[100],
+                  onPressed: () {
+                    //
+                  },
+                  child: Row(
+                    children: [
+                      Text('3.'),
+                      Container(
+                        child: Row(
+                          // Microphone icon
+                          children: [
+                            Icon(Icons.mic),
+                            Text('Press the microphone to record'),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
