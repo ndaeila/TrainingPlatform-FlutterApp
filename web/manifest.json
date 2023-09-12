@@ -1,6 +1,6 @@
 {
-    "name": "californiaefficiencygroup",
-    "short_name": "californiaefficiencygroup",
+    "name": "<name>",
+    "short_name": "<name>",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

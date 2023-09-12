@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:californiaefficiencygroup/ui/login/signup/signup_state.dart';
+import 'package:<name>/ui/login/signup/signup_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/single_child_widget.dart';

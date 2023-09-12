@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-import 'package:californiaefficiencygroup/ui/login/login_controller.dart';
-import 'package:californiaefficiencygroup/ui/login/login_state.dart';
+import 'package:<name>/ui/login/login_controller.dart';
+import 'package:<name>/ui/login/login_state.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

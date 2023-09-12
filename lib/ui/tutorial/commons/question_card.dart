@@ -1,4 +1,4 @@
-import 'package:californiaefficiencygroup/ui/tutorial/commons/question.dart';
+import 'package:<name>/ui/tutorial/commons/question.dart';
 import 'package:flutter/material.dart';
 
 class QuestionCard extends StatelessWidget {

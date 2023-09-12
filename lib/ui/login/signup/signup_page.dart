@@ -1,4 +1,4 @@
-import 'package:californiaefficiencygroup/ui/login/signup/signup_controller.dart';
+import 'package:<name>/ui/login/signup/signup_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

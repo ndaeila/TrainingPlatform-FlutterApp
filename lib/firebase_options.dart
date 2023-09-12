@@ -47,10 +47,10 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyCYb24cZCEV6QmVxEbPw9cxII0-xugiADA',
     appId: '1:407334007063:web:117de180f9155447e50752',
     messagingSenderId: '407334007063',
-    projectId: 'ceg-api',
-    authDomain: 'ceg-api.firebaseapp.com',
-    databaseURL: 'https://ceg-api-default-rtdb.firebaseio.com/',
-    storageBucket: 'ceg-api.appspot.com',
+    projectId: '<name>-api',
+    authDomain: '<name>-api.firebaseapp.com',
+    databaseURL: 'https://<name>-api-default-rtdb.firebaseio.com/',
+    storageBucket: '<name>-api.appspot.com',
     measurementId: 'G-W3Y87M606V',
   );
 }

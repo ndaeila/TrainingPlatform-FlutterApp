@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:californiaefficiencygroup/ui/common/nav-drawer.dart';
-import 'package:californiaefficiencygroup/ui/home/home_controller.dart';
-import 'package:californiaefficiencygroup/ui/home/home_state.dart';
+import 'package:<name>/ui/common/nav-drawer.dart';
+import 'package:<name>/ui/home/home_controller.dart';
+import 'package:<name>/ui/home/home_state.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -57,9 +57,9 @@ class HomePage extends StatelessWidget {
                     height: kToolbarHeight - titleMargin,
                     child: Row(
                       children: [
-                        Image.asset('./images/CEG-icon.png'),
+                        Image.asset('./images/<name>-icon.png'),
                         const Text("  "),
-                        Image.asset('./images/CEG-title.png'),
+                        Image.asset('./images/<name>-title.png'),
                       ],
                     ),
                   )

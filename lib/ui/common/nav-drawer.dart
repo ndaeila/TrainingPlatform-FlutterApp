@@ -20,7 +20,7 @@ class NavDrawer extends StatelessWidget {
           ),
           DrawerHeader(
             child: const Text(
-              'California\nEfficiency\nGroup',
+              '<Name>,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 35,

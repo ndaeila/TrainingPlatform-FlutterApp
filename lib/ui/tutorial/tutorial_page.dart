@@ -1,8 +1,8 @@
-import 'package:californiaefficiencygroup/ui/common/nav-drawer.dart';
-import 'package:californiaefficiencygroup/ui/tutorial/commons/question.dart';
-import 'package:californiaefficiencygroup/ui/tutorial/commons/question_card.dart';
-import 'package:californiaefficiencygroup/ui/tutorial/tutorial_controller.dart';
-import 'package:californiaefficiencygroup/ui/tutorial/tutorial_state.dart';
+import 'package:<name>/ui/common/nav-drawer.dart';
+import 'package:<name>/ui/tutorial/commons/question.dart';
+import 'package:<name>/ui/tutorial/commons/question_card.dart';
+import 'package:<name>/ui/tutorial/tutorial_controller.dart';
+import 'package:<name>/ui/tutorial/tutorial_state.dart';
 import 'package:chewie/chewie.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

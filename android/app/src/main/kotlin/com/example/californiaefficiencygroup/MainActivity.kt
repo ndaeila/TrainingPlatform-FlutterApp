@@ -1,4 +1,4 @@
-package com.example.californiaefficiencygroup
+package com.example.<name>
 
 import io.flutter.embedding.android.FlutterActivity
 

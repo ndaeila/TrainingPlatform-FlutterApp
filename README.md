@@ -1,6 +1,6 @@
-# CaliforniaEfficiencyGroupAPP
+# <name>APP
 
-Training web/mobile app for California Efficiency Group.
+Training web/mobile app.
 
 # Setup
 ## Flutter

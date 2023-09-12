@@ -1,5 +1,5 @@
-import 'package:californiaefficiencygroup/common/file_reader.dart';
-import 'package:californiaefficiencygroup/ui/home/home_state.dart';
+import 'package:<name>/common/file_reader.dart';
+import 'package:<name>/ui/home/home_state.dart';
 import 'package:flutter/material.dart';
 import 'package:state_notifier/state_notifier.dart';
 import 'package:video_player/video_player.dart';
@@ -9,7 +9,7 @@ class HomeController extends StateNotifier<HomeState> with LocatorMixin {
   HomeController() : super(const HomeState());
 
   VideoPlayerController videoPlayerController =
-      VideoPlayerController.asset('assets/videos/CEGVideo.mp4');
+      VideoPlayerController.asset('assets/videos/Video.mp4');
   ChewieController? chewieController;
 
   void setDrawerIsOpen(bool b) => state = state.copyWith(drawerIsOpen: b);

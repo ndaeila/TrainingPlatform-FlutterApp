@@ -1,8 +1,8 @@
-import 'package:californiaefficiencygroup/ui/home/home_page.dart';
-import 'package:californiaefficiencygroup/ui/login/login_page.dart';
-import 'package:californiaefficiencygroup/ui/login/signup/signup_page.dart';
-import 'package:californiaefficiencygroup/ui/splash/splash_dart.dart';
-import 'package:californiaefficiencygroup/ui/tutorial/tutorial_page.dart';
+import 'package:<name>/ui/home/home_page.dart';
+import 'package:<name>/ui/login/login_page.dart';
+import 'package:<name>/ui/login/signup/signup_page.dart';
+import 'package:<name>/ui/splash/splash_dart.dart';
+import 'package:<name>/ui/tutorial/tutorial_page.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {

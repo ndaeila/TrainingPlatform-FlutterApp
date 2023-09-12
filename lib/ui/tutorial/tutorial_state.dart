@@ -1,4 +1,4 @@
-import 'package:californiaefficiencygroup/ui/tutorial/commons/question.dart';
+import 'package:<name>/ui/tutorial/commons/question.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

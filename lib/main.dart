@@ -1,20 +1,20 @@
 import 'dart:math';
 
-import 'package:californiaefficiencygroup/ui/app.dart';
-import 'package:californiaefficiencygroup/ui/home/home_controller.dart';
-import 'package:californiaefficiencygroup/ui/home/home_state.dart';
-import 'package:californiaefficiencygroup/ui/login/login_controller.dart';
-import 'package:californiaefficiencygroup/ui/login/login_state.dart';
-import 'package:californiaefficiencygroup/ui/login/signup/signup_controller.dart';
-import 'package:californiaefficiencygroup/ui/login/signup/signup_state.dart';
-import 'package:californiaefficiencygroup/ui/splash/splash_controller.dart';
-import 'package:californiaefficiencygroup/ui/splash/splash_state.dart';
-import 'package:californiaefficiencygroup/ui/tutorial/tutorial_controller.dart';
-import 'package:californiaefficiencygroup/ui/tutorial/tutorial_state.dart';
+import 'package:<name>/ui/app.dart';
+import 'package:<name>/ui/home/home_controller.dart';
+import 'package:<name>/ui/home/home_state.dart';
+import 'package:<name>/ui/login/login_controller.dart';
+import 'package:<name>/ui/login/login_state.dart';
+import 'package:<name>/ui/login/signup/signup_controller.dart';
+import 'package:<name>/ui/login/signup/signup_state.dart';
+import 'package:<name>/ui/splash/splash_controller.dart';
+import 'package:<name>/ui/splash/splash_state.dart';
+import 'package:<name>/ui/tutorial/tutorial_controller.dart';
+import 'package:<name>/ui/tutorial/tutorial_state.dart';
 
 // Import necessary material
 import 'package:firebase_core/firebase_core.dart';
-import 'package:californiaefficiencygroup/firebase_options.dart';
+import 'package:<name>/firebase_options.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:flutter/material.dart';

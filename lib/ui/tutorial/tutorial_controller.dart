@@ -1,8 +1,8 @@
-import 'package:californiaefficiencygroup/ui/tutorial/commons/question.dart';
+import 'package:<name>/ui/tutorial/commons/question.dart';
 import 'package:chewie/chewie.dart';
 import 'package:state_notifier/state_notifier.dart';
 
-import 'package:californiaefficiencygroup/ui/tutorial/tutorial_state.dart';
+import 'package:<name>/ui/tutorial/tutorial_state.dart';
 import 'package:video_player/video_player.dart';
 
 class TutorialController extends StateNotifier<TutorialState>
@@ -10,7 +10,7 @@ class TutorialController extends StateNotifier<TutorialState>
   TutorialController() : super(const TutorialState());
   
   VideoPlayerController videoPlayerController =
-      VideoPlayerController.asset('assets/videos/CEGVideo.mp4');
+      VideoPlayerController.asset('assets/videos/Video.mp4');
   ChewieController? chewieController;
 
   void setDrawerIsOpen(bool b) => state = state.copyWith(drawerIsOpen: b);
